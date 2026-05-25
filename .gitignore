@@ -1,0 +1,29 @@
+#python
+__pychache__
+*.pyc
+*.pyo
+*.pyd
+*.so
+
+#Virtual environments
+venv/
+env/
+edgeai/
+
+#dataset
+datasets/
+
+#Experiments
+outputs/
+runs/
+logs/
+
+#Model weights
+*.pt
+*.onnx
+*.engine
+weights/
+
+#Temporary files
+*.log
+*.tmp
