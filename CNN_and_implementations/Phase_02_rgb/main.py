@@ -4,6 +4,7 @@ from torchvision.datasets import CIFAR10
 
 from src.multi_filter_convolution import multi_filter_convolve
 #from src.multi_channel_convolution import multi_channel_convolve
+from src.pooling import max_pool_multi_channel
 
 
 # Loading dataset
@@ -52,6 +53,13 @@ feature_maps= multi_filter_convolve(
 
 print("Feature maps shape:", feature_maps.shape)
 
+## Update 4: Adding activation function
+from src.activations import relu
+feature_maps= relu(feature_maps)
+
+pooled_maps= max_pool_multi_channel(feature_maps, pool_size=2, stride=2)
+print("After pooling:", pooled_maps.shape)
+
 ## Update 3: Adding 2nd convolution layer
 second_layer_kernels= np.random.randn(4,8,3,3)
 second_feature_maps= multi_filter_convolve(
@@ -61,7 +69,8 @@ second_feature_maps= multi_filter_convolve(
     padding=1
 )
 
-print("Second layer shape:", second_feature_maps) # (4,32,32) ---> 8 input channels, 4 learned filters, 4 output maps
+#Appling ReLu on 2nd layer
+second_feature_maps= relu(second_feature_maps)
 
 
 # Normalizing display
@@ -89,6 +98,21 @@ for i in range(8):
     plt.title(f"Filter{i+1}")
     plt.axis("off")
 
+plt.tight_layout()
+plt.show()
+
+# plotting pooled image
+plt.figure(figsize=(12,8))
+
+for i in range(8):
+    fmap= pooled_maps[i]
+
+    norm= (fmap-fmap.min())/(fmap.max()-fmap.min())
+
+    plt.subplot(2,4,i+1)
+    plt.imshow(norm,cmap='gray')
+    plt.title(f"pooled{i+1}")
+    plt.axis("off")
 plt.tight_layout()
 plt.show()
 
@@ -137,5 +161,11 @@ plt.show()
 
 ## Run 3: First CNN stack:
     - Input---> conv layer 1---> conv layer 2
+
+## Run 4: Applied activation function: ReLU and Pooling
+    - Many of the feature maps turned completely blank
+    - Reason: negative signals and noise got suppresed. Only positive and strongest evidence survived
+    - Earlier the activation functions like sigmoid, tanh caused 1. Vanishing gradient 2. Slow training. ReLu resolved much of this
+    - However there are still limitations to it because of its binary nature time behaviour which actually leads to signal loss at higher depth.
 
 """
