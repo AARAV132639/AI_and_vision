@@ -55,7 +55,7 @@ for epoch in range (EPOCHS):
         LEARNING_RATE 
     )
 
-    if epoch%100==0:
+    if epoch%1000==0:
         print(
             f"Epoch{epoch:3d}|Loss={loss:.6f}"
         )
