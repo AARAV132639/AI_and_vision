@@ -26,7 +26,7 @@ def compute_mahalanobis_distance(points, keypoint, Q):
     diff= points- keypoint
 
     # Efficient computation of xTQx for all points
-    distance = np.sum((diff@Q)*diff,aix=1)
+    distance = np.sum((diff@Q)*diff,axis=1)
 
     return distance 
 
@@ -83,7 +83,7 @@ def get_skinning_weights(
         )
 
         exp_weights = np.exp(
-            scaled_dist = - max_val 
+            scaled_dist - max_val 
         )
 
         weights= exp_weights/ np.sum(
