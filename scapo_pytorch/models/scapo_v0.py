@@ -11,6 +11,9 @@ from models.skinning_field import SkinningField
 from models.bone_transform import BoneTransform
 from models.blend_skinning import BlendSkinning
 
+## upgrade 1: Bone transform
+from models.bone_gaussian_net import BoneGaussianNet
+
 
 class SCAPOv0(nn.Module):
 
@@ -45,6 +48,12 @@ class SCAPOv0(nn.Module):
 
         self.mahal = MahalanobisDistance()
 
+        #Adding bone gaussian
+        self.bone_gaussian = BoneGaussianNet(
+                latent_dim=1024,
+                num_parts=num_parts
+                )
+
         self.skinning = SkinningField(
             gamma=gamma
         )
@@ -53,41 +62,7 @@ class SCAPOv0(nn.Module):
 
         self.blend_skinning = BlendSkinning()
 
-    def build_identity_Q(
-        self,
-        batch_size,
-        device
-    ):
-        """
-        Initial isotropic bones.
-
-        Q = I
-
-        Shape:
-        [B,P,3,3]
-        """
-
-        Q = torch.eye(
-            3,
-            device=device
-        )
-
-        Q = Q.view(
-            1,
-            1,
-            3,
-            3
-        )
-
-        Q = Q.repeat(
-            batch_size,
-            self.num_parts,
-            1,
-            1
-        )
-
-        return Q
-
+    
     def forward(
         self,
         points
@@ -122,10 +97,7 @@ class SCAPOv0(nn.Module):
         # Mahalanobis field
         #
 
-        Q = self.build_identity_Q(
-            B,
-            points.device
-        )
+        Q = self.bone_gaussian(z) #using bone gaussian
 
         distance = self.mahal(
             points,
@@ -164,6 +136,7 @@ class SCAPOv0(nn.Module):
         return {
             "latent": z,
             "keypoints": keypoints,
+            "Q": Q,
             "pivot": pivot,
             "axis": axis,
             "angle": angle,
