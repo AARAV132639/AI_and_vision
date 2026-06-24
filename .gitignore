@@ -5,6 +5,9 @@ __pychache__
 *.pyd
 *.so
 
+*.zip
+*.csv
+
 #Virtual environments
 venv/
 env/
@@ -12,6 +15,9 @@ edgeai/
 
 #dataset
 datasets/
+
+#tests
+tests/
 
 #Experiments
 outputs/
