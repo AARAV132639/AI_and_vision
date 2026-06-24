@@ -1,0 +1,111 @@
+torch.Size([8, 1600, 3])
+Epoch 001 | Loss 0.3071
+Eigenvalues: tensor([3.0306, 0.4742, 1.4003], device='cuda:0', grad_fn=<SelectBackward0>)
+Epoch 002 | Loss 0.1452
+Epoch 003 | Loss 0.1285
+Epoch 004 | Loss 0.1205
+Epoch 005 | Loss 0.1243
+Epoch 006 | Loss 0.1208
+Epoch 007 | Loss 0.1171
+Epoch 008 | Loss 0.1192
+Epoch 009 | Loss 0.1108
+Epoch 010 | Loss 0.1086
+Epoch 011 | Loss 0.1135
+Eigenvalues: tensor([25.5994,  1.5691,  4.3911], device='cuda:0', grad_fn=<SelectBackward0>)
+Epoch 012 | Loss 0.1049
+Epoch 013 | Loss 0.1042
+Epoch 014 | Loss 0.1015
+Epoch 015 | Loss 0.0997
+Epoch 016 | Loss 0.0949
+Epoch 017 | Loss 0.1052
+Epoch 018 | Loss 0.1005
+Epoch 019 | Loss 0.0982
+Epoch 020 | Loss 0.0970
+Epoch 021 | Loss 0.0918
+Eigenvalues: tensor([4.7919, 5.5502, 4.3179], device='cuda:0', grad_fn=<SelectBackward0>)
+Epoch 022 | Loss 0.0949
+Epoch 023 | Loss 0.0927
+Epoch 024 | Loss 0.0978
+Epoch 025 | Loss 0.0902
+Epoch 026 | Loss 0.0920
+Epoch 027 | Loss 0.0917
+Epoch 028 | Loss 0.0882
+Epoch 029 | Loss 0.0934
+Epoch 030 | Loss 0.0972
+Epoch 031 | Loss 0.0907
+Eigenvalues: tensor([36.4499,  2.4806,  1.9726], device='cuda:0', grad_fn=<SelectBackward0>)
+Epoch 032 | Loss 0.0921
+Epoch 033 | Loss 0.0901
+Epoch 034 | Loss 0.0902
+Epoch 035 | Loss 0.0864
+Epoch 036 | Loss 0.0926
+Epoch 037 | Loss 0.0902
+Epoch 038 | Loss 0.0893
+Epoch 039 | Loss 0.0851
+Epoch 040 | Loss 0.0956
+Epoch 041 | Loss 0.0870
+Eigenvalues: tensor([72.0512,  0.7878,  3.7278], device='cuda:0', grad_fn=<SelectBackward0>)
+Epoch 042 | Loss 0.0870
+Epoch 043 | Loss 0.0854
+Epoch 044 | Loss 0.0911
+Epoch 045 | Loss 0.1009
+Epoch 046 | Loss 0.0876
+Epoch 047 | Loss 0.0846
+Epoch 048 | Loss 0.0832
+Epoch 049 | Loss 0.0838
+Epoch 050 | Loss 0.0886
+Epoch 051 | Loss 0.0929
+Eigenvalues: tensor([81.1187,  0.2718,  1.5368], device='cuda:0', grad_fn=<SelectBackward0>)
+Epoch 052 | Loss 0.0887
+Epoch 053 | Loss 0.0835
+Epoch 054 | Loss 0.0872
+Epoch 055 | Loss 0.0852
+Epoch 056 | Loss 0.0823
+Epoch 057 | Loss 0.0833
+Epoch 058 | Loss 0.0837
+Epoch 059 | Loss 0.0793
+Epoch 060 | Loss 0.0798
+Epoch 061 | Loss 0.0849
+Eigenvalues: tensor([7.7543, 3.9756, 3.0188], device='cuda:0', grad_fn=<SelectBackward0>)
+Epoch 062 | Loss 0.0851
+Epoch 063 | Loss 0.0810
+Epoch 064 | Loss 0.0838
+Epoch 065 | Loss 0.0818
+Epoch 066 | Loss 0.0830
+Epoch 067 | Loss 0.0819
+Epoch 068 | Loss 0.0791
+Epoch 069 | Loss 0.0804
+Epoch 070 | Loss 0.0774
+Epoch 071 | Loss 0.0775
+Eigenvalues: tensor([4.8648, 5.4060, 3.5109], device='cuda:0', grad_fn=<SelectBackward0>)
+Epoch 072 | Loss 0.0795
+Epoch 073 | Loss 0.0780
+Epoch 074 | Loss 0.0771
+Epoch 075 | Loss 0.0807
+Epoch 076 | Loss 0.0788
+Epoch 077 | Loss 0.0800
+Epoch 078 | Loss 0.0775
+Epoch 079 | Loss 0.0820
+Epoch 080 | Loss 0.0794
+Epoch 081 | Loss 0.0767
+Eigenvalues: tensor([6.1608, 0.3125, 9.6141], device='cuda:0', grad_fn=<SelectBackward0>)
+Epoch 082 | Loss 0.0843
+Epoch 083 | Loss 0.0797
+Epoch 084 | Loss 0.0777
+Epoch 085 | Loss 0.0773
+Epoch 086 | Loss 0.0783
+Epoch 087 | Loss 0.0768
+Epoch 088 | Loss 0.0771
+Epoch 089 | Loss 0.0762
+Epoch 090 | Loss 0.0763
+Epoch 091 | Loss 0.0764
+Eigenvalues: tensor([ 9.1083, 17.2011,  0.0233], device='cuda:0', grad_fn=<SelectBackward0>)
+Epoch 092 | Loss 0.0767
+Epoch 093 | Loss 0.0761
+Epoch 094 | Loss 0.0777
+Epoch 095 | Loss 0.0763
+Epoch 096 | Loss 0.0781
+Epoch 097 | Loss 0.0780
+Epoch 098 | Loss 0.0771
+Epoch 099 | Loss 0.0784
+Epoch 100 | Loss 0.0793
